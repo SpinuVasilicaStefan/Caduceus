@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DiseasesDataFront.Models.Simptom>
+
+
+@{
+    ViewData["Title"] = "ListSimptoms";
+}
+
+<ol class="gradient-list">
+    @foreach (var item in Model)
+    {
+        <li>
+            <div class="simptom_data">
+                <div class="simptom_info">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </div>
+            </div>
+        </li>
+    }
+</ol>
+
+<a asp-action="Create" class="simptoms_button"><span>Home</span></a>

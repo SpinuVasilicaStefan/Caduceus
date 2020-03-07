@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DiseasesDataFront.Models.Simptom>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@Html.DisplayNameFor(model => model.Name)
+
+<ol class="gradient-list">
+    @foreach (var item in Model)
+    {
+        <li>
+            <div class="simptom_data">
+                <div class="simptom_info">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </div>
+                <div class="simptom_actions">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </div>
+        </li>
+    }
+</ol>
+
+<a asp-action="Create" class="simptoms_button"><span>Create New</span></a>
+<a asp-action="ListSimptoms" class="simptoms_button"><span>Search for desease</span></a>

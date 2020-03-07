@@ -1,0 +1,35 @@
+﻿@model DiseasesDataFront.Models.Simptom
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="logo">
+    <img id="logo-image" src="/css/images/cadu.png" />
+</div>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <div class="options">
+            <div class="simptoms_button delete_button">
+                <span>
+                    <input type="submit" value="Delete" />
+                </span>
+            </div>
+
+            <a asp-action="Index" class="simptoms_button"><span>Go to List</span></a>
+        </div>
+    </form>
+</div>

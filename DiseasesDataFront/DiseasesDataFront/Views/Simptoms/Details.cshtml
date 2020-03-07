@@ -1,0 +1,23 @@
+﻿@model DiseasesDataFront.Models.Simptom
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="logo">
+    <img id="logo-image" src="/css/images/cadu.png" />
+</div>
+<div class="title text-white">
+    @Html.DisplayNameFor(model => model.Name)
+</div>
+<div>
+    <div class="owerflow_wrap detailed_information">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+
+    <div class="detais_buttons">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="simptoms_button"><span>Edit</span></a>
+        <a asp-action="Index" class="simptoms_button"><span>Go to List</span></a>
+    </div>
+</div>

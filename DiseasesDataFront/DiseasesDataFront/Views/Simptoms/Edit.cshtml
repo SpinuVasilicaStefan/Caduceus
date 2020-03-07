@@ -1,0 +1,37 @@
+﻿@model DiseasesDataFront.Models.Simptom
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="logo">
+    <img id="logo-image" src="/css/images/cadu.png" />
+</div>
+<div class="row input_bar">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" id="input_box" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="options">
+                    <div class="simptoms_button">
+                        <span>
+                            <input type="submit" value="Save">
+                        </span>
+                    </div>
+
+                    <a asp-action="Index" class="simptoms_button"><span>Go to List</span></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
